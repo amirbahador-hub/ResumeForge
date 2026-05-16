@@ -1,0 +1,24 @@
+{
+  "templates": [
+    {
+      "id": "classic-clean",
+      "name": "Classic Clean",
+      "description": "Centered header, compact single-column flow, and strong section hierarchy."
+    },
+    {
+      "id": "editorial-compact",
+      "name": "Editorial Compact",
+      "description": "Left-aligned header, compact typography, and subtle divider rhythm."
+    },
+    {
+      "id": "modern-line",
+      "name": "Modern Line",
+      "description": "Minimal ATS-safe layout with thin rules and dense but readable spacing."
+    },
+    {
+      "id": "portfolio-mirror",
+      "name": "Portfolio Mirror",
+      "description": "Mirrors the candidate's original resume layout: stacked name, right-aligned contact column."
+    }
+  ]
+}

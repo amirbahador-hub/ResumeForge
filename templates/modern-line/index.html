@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ content.name }} - Resume</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <div class="name-block">
+          <h1>{{ content.name }}</h1>
+          {% if content.headline %}<p>{{ content.headline }}</p>{% endif %}
+        </div>
+        <div class="contact">
+          {% set bits = [] %}
+          {% if content.contact.email %}{% set _ = bits.append(content.contact.email) %}{% endif %}
+          {% if content.contact.phone %}{% set _ = bits.append(content.contact.phone) %}{% endif %}
+          {% if content.contact.location %}{% set _ = bits.append(content.contact.location) %}{% endif %}
+          {% if bits %}<div>{{ bits | join(" | ") }}</div>{% endif %}
+          {% if content.contact.links %}
+          <div class="links">
+            {% for link in content.contact.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% if not loop.last %} | {% endif %}{% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </header>
+
+      {% if content.summary %}
+      <section class="section summary">
+        <h2>Summary</h2>
+        <p>{{ content.summary }}</p>
+      </section>
+      {% endif %}
+
+      {% if content.skill_groups %}
+      <section class="section">
+        <h2>Skills</h2>
+        {% for group in content.skill_groups %}
+        <p class="skill-row"><span class="skill-label">{{ group.label }}:</span> {{ group.items | join(", ") }}</p>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.experience %}
+      <section class="section">
+        <h2>Experience</h2>
+        {% for item in content.experience %}
+        <article class="experience">
+          <div class="title-row">
+            <div>
+              <h3>{{ item.role }} — {{ item.company }}</h3>
+              {% if item.location %}<p class="sub">{{ item.location }}</p>{% endif %}
+            </div>
+            {% if item.dates %}<p class="date">{{ item.dates }}</p>{% endif %}
+          </div>
+          {% if item.bullets %}
+          <ul>{% for bullet in item.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.projects %}
+      <section class="section">
+        <h2>Projects</h2>
+        {% for project in content.projects %}
+        <article class="project">
+          <p class="project-line">
+            <strong>{{ project.name }}</strong>{% if project.description %} — {{ project.description }}{% endif %}
+            {% if project.url %}<br /><a href="{{ project.url }}">{{ project.url }}</a>{% endif %}
+          </p>
+          {% if project.bullets %}<ul>{% for bullet in project.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>{% endif %}
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.open_source %}
+      <section class="section">
+        <h2>Open Source</h2>
+        {% for project in content.open_source %}
+        <article class="project">
+          <p class="project-line">
+            <strong>{{ project.name }}</strong>{% if project.description %} — {{ project.description }}{% endif %}
+            {% if project.url %}<br /><a href="{{ project.url }}">{{ project.url }}</a>{% endif %}
+          </p>
+          {% if project.bullets %}<ul>{% for bullet in project.bullets %}<li>{{ bullet }}</li>{% endfor %}</ul>{% endif %}
+        </article>
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.education %}
+      <section class="section">
+        <h2>Education</h2>
+        {% for entry in content.education %}
+        <p class="education-line">
+          <strong>{{ entry.degree }}</strong>{% if entry.institution %} — {{ entry.institution }}{% endif %}{% if entry.dates %} <span class="sub inline">{{ entry.dates }}</span>{% endif %}
+        </p>
+        {% if entry.details %}<p class="sub">{{ entry.details }}</p>{% endif %}
+        {% endfor %}
+      </section>
+      {% endif %}
+
+      {% if content.languages %}
+      <section class="section">
+        <h2>Languages</h2>
+        <p>{% for lang in content.languages %}{{ lang.name }}{% if lang.proficiency %} ({{ lang.proficiency }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}</p>
+      </section>
+      {% endif %}
+
+      {% for section in content.extra_sections %}
+      <section class="section">
+        <h2>{{ section.heading }}</h2>
+        <ul>{% for item in section.items %}<li>{{ item }}</li>{% endfor %}</ul>
+      </section>
+      {% endfor %}
+    </main>
+  </body>
+</html>
