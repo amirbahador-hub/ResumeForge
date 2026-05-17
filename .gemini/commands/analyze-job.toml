@@ -1,0 +1,9 @@
+description = "Structured fit/gap analysis of a job description against the master profile. No resume generated."
+
+prompt = """
+The full command spec follows. The literal token `$ARGUMENTS` inside the spec refers to whatever the user typed after the command name; treat it as: {{args}}
+
+--- BEGIN SPEC (.claude/commands/analyze-job.md) ---
+!{cat .claude/commands/analyze-job.md}
+--- END SPEC ---
+"""

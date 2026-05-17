@@ -1,0 +1,1 @@
+../../.claude/commands/generate-resume.md

@@ -1,0 +1,9 @@
+description = "Tailor a resume to a job description using the master profile and a chosen template."
+
+prompt = """
+The full command spec follows. The literal token `$ARGUMENTS` inside the spec refers to whatever the user typed after the command name; treat it as: {{args}}
+
+--- BEGIN SPEC (.claude/commands/generate-resume.md) ---
+!{cat .claude/commands/generate-resume.md}
+--- END SPEC ---
+"""

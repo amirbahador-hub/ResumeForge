@@ -3,22 +3,32 @@
     {
       "id": "classic-clean",
       "name": "Classic Clean",
-      "description": "Centered header, compact single-column flow, and strong section hierarchy."
+      "description": "Centered header, compact single-column flow, and strong section hierarchy.",
+      "needs_photo": false
     },
     {
       "id": "editorial-compact",
       "name": "Editorial Compact",
-      "description": "Left-aligned header, compact typography, and subtle divider rhythm."
+      "description": "Left-aligned header, compact typography, and subtle divider rhythm.",
+      "needs_photo": false
     },
     {
       "id": "modern-line",
       "name": "Modern Line",
-      "description": "Minimal ATS-safe layout with thin rules and dense but readable spacing."
+      "description": "Minimal ATS-safe layout with thin rules and dense but readable spacing.",
+      "needs_photo": false
     },
     {
-      "id": "portfolio-mirror",
-      "name": "Portfolio Mirror",
-      "description": "Mirrors the candidate's original resume layout: stacked name, right-aligned contact column."
+      "id": "portrait",
+      "name": "Portrait",
+      "description": "Circular headshot beside a stacked name, right-aligned contact column, teal accents.",
+      "needs_photo": true
+    },
+    {
+      "id": "portrait-noir",
+      "name": "Portrait Noir",
+      "description": "Same layout as Portrait, with a black-and-red palette and bolder contrast.",
+      "needs_photo": true
     }
   ]
 }

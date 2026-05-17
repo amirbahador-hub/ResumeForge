@@ -1,0 +1,318 @@
+@page {
+  size: letter;
+  margin: 0.35in 0;
+}
+
+@page :first {
+  margin-top: 0;
+}
+
+:root {
+  --text: #0a0a0a;
+  --muted: #555555;
+  --accent: #c8102e;
+  --accent-strong: #8a0a20;
+  --corner: #0a0a0a;
+  --chip-bg: #0a0a0a;
+  --chip-text: #ffffff;
+  --rule: #b0b0b0;
+  --page: #ffffff;
+  --body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 9.8pt;
+  line-height: 1.4;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page {
+  position: relative;
+  padding: 0 0.6in;
+  margin: 0;
+}
+
+.first-spacer {
+  height: 0.35in;
+}
+
+.corner-block {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0.45in;
+  height: 1.7in;
+  background: var(--corner);
+  z-index: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.25in;
+  position: relative;
+  z-index: 1;
+  padding-top: 0.05in;
+}
+
+.portrait {
+  flex: 0 0 auto;
+  width: 1.15in;
+  height: 1.15in;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3pt solid var(--accent);
+}
+
+.identity {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.identity h1 {
+  margin: 0;
+  font-size: 27pt;
+  font-weight: 800;
+  line-height: 1.02;
+  color: var(--text);
+  letter-spacing: 0;
+}
+
+.headline {
+  margin: 0.08in 0 0;
+  font-size: 11pt;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.2pt;
+}
+
+.intro {
+  margin: 0.12in 0 0;
+  font-size: 9.4pt;
+  color: var(--muted);
+  line-height: 1.45;
+  max-width: 4.4in;
+}
+
+.contact {
+  flex: 0 0 2.8in;
+  text-align: right;
+  font-size: 9pt;
+  color: var(--text);
+  padding-top: 0.05in;
+}
+
+.contact-row {
+  margin: 0 0 0.07in;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.1in;
+}
+
+.contact-value {
+  color: var(--text);
+}
+
+a.contact-value {
+  color: var(--text);
+}
+
+.contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.18in;
+  height: 0.18in;
+  border-radius: 0.03in;
+  background: var(--corner);
+  color: #ffffff;
+  font-size: 7.5pt;
+  flex-shrink: 0;
+}
+
+.hero-rule {
+  border: 0;
+  border-top: 0.5pt solid var(--rule);
+  margin: 0.18in 0 0;
+}
+
+.section {
+  margin-top: 0.14in;
+  position: relative;
+}
+
+.section h2 {
+  break-after: avoid;
+  page-break-after: avoid;
+  orphans: 2;
+  widows: 2;
+}
+
+.section h2 {
+  margin: 0 0 0.09in;
+  font-size: 12.5pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5pt;
+  color: var(--text);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.07in 0.08in;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.025in 0.12in;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  border-radius: 0.04in;
+  font-size: 9pt;
+  font-weight: 500;
+  letter-spacing: 0.1pt;
+}
+
+.entry {
+  display: flex;
+  gap: 0.13in;
+  margin-top: 0.12in;
+  page-break-inside: avoid;
+}
+
+.entry-bar {
+  flex: 0 0 0.07in;
+  background: var(--accent);
+  border-radius: 0.01in;
+  align-self: stretch;
+  min-height: 0.4in;
+}
+
+.entry-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.role {
+  margin: 0;
+  font-size: 11.5pt;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.company {
+  margin: 0.02in 0 0;
+  font-size: 10.5pt;
+  color: var(--text);
+}
+
+.link-arrow {
+  color: var(--accent);
+  font-size: 8pt;
+  text-decoration: none;
+}
+
+.entry-meta-row {
+  margin: 0.06in 0 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2in;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 9pt;
+}
+
+.entry-date,
+.entry-location {
+  font-style: italic;
+}
+
+.entry-detail {
+  margin: 0.05in 0 0;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 9pt;
+}
+
+.bullets-label {
+  margin: 0.06in 0 0.02in;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 8.6pt;
+}
+
+.role-story {
+  margin: 0.06in 0 0.02in;
+  font-style: italic;
+  color: var(--muted);
+  font-size: 9.2pt;
+  line-height: 1.35;
+}
+
+strong,
+li strong,
+.role-story strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+ul {
+  margin: 0.03in 0 0;
+  padding: 0 0 0 0.18in;
+  list-style: disc;
+}
+
+li {
+  margin: 0 0 0.04in 0;
+  font-size: 9.4pt;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+li::marker {
+  color: var(--accent);
+  font-size: 1.05em;
+}
+
+.lang-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.08in 0.4in;
+}
+
+.lang {
+  min-width: 1.6in;
+  page-break-inside: avoid;
+}
+
+.lang-name {
+  margin: 0;
+  font-weight: 700;
+  font-size: 9.8pt;
+}
+
+.lang-level {
+  margin: 0.02in 0 0;
+  font-style: italic;
+  color: var(--accent);
+  font-size: 9pt;
+}
